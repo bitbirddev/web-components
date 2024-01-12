@@ -1,13 +1,21 @@
 # bitbirddev-web-components
 
-To install dependencies:
+## Description
+
+A hopefully growing collection of web components.
+
+### Finished Bundles
+
+- [Usercentrics Consent Wall](/components/consent/README.md)
+
+## 1. Install Dependencies
 
 ```bash
 bun install
 ```
 
-To bundle:
+### Bundle
 
 ```bash
-bun build ./components/* --outdir ./dist --minify
+bun x vite build
 ```
