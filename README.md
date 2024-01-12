@@ -14,7 +14,7 @@ A hopefully growing collection of web components.
 bun install
 ```
 
-### Bundle
+### 2. Bundle
 
 ```bash
 bun x vite build

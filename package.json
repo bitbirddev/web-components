@@ -1,5 +1,7 @@
 {
   "name": "bitbirddev-web-components",
+  "description": "a hopefully growing collection of web components",
+  "version": "1.0.0",
   "type": "module",
   "files": [
     "dist"
@@ -24,5 +26,7 @@
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
-  "dependencies": { "@tailwindcss/typography": "^0.5.10" }
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.10"
+  }
 }
