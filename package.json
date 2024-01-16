@@ -21,12 +21,21 @@
     "lit": "^3.1.1",
     "lodash": "^4.17.21",
     "postcss": "^8.4.33",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.1",
+		"np": "*"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.10"
-  }
+  },
+  "script": {
+		"release": "np",
+    "test": "echo \"No test specified\"",
+    "build": "bunx vite build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
 }
