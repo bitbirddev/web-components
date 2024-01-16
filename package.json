@@ -39,7 +39,6 @@
     "access": "public"
   },
   "np": {
-    "yarn": true,
-    "contents": "dist"
+    "yarn": true
   }
 }
