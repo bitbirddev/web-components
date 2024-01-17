@@ -7,15 +7,15 @@ export default class Consent extends LitElement {
     css`
       :host {
         color: #fff;
-        background-color: #000;
+        background-color: var(--consent-bg-color, #000000);
         display: block;
       }
       .bg-letters {
         color: white;
         text-shadow:
-          1px 1px 2px black,
-          0 0 25px black,
-          0 0 15px black;
+          1px 1px 2px var(--consent-text-shadow-color, #000000),
+          0 0 25px var(--consent-text-shadow-color, #000000),
+          0 0 15px var(--consent-text-shadow-color, #000000);
       }
     `,
   ];
@@ -37,24 +37,29 @@ export default class Consent extends LitElement {
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    window.removeEventListener(
-      "onConsentStatusChange",
-      this.handleConsentStatusChange,
-    );
+    if (this.requiredConsents.length > 0) {
+      window.removeEventListener(
+        "onConsentStatusChange",
+        this.handleConsentStatusChange,
+      );
+    }
   }
 
   connectedCallback() {
     super.connectedCallback();
-    window.addEventListener("UC_UI_INITIALIZED", (event) => {
-      // load current consent status when Usercentrics has initialized
-      this.UCInitialized = true;
-      this.refreshConsentStatus();
-    });
-    // update consent status when it changes
-    window.addEventListener(
-      "onConsentStatusChange",
-      this.handleConsentStatusChange,
-    );
+    // only register event listeners if requiredConsents are set
+    if (this.requiredConsents.length > 0) {
+      window.addEventListener("UC_UI_INITIALIZED", (event) => {
+        // load current consent status when Usercentrics has initialized
+        this.UCInitialized = true;
+        this.refreshConsentStatus();
+      });
+      // update consent status when it changes
+      window.addEventListener(
+        "onConsentStatusChange",
+        this.handleConsentStatusChange,
+      );
+    }
   }
 
   refreshConsentStatus() {
@@ -120,67 +125,96 @@ export default class Consent extends LitElement {
   }
 
   getInitializingTemplate() {
+    return html`
+      <div class="prose prose-lg text-white flex flex-col items-center justify-center">
+        <svg
+          class="animate-spin size-8 text-[var(--consent-spinner-color)] mb-4"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            class="opacity-25"
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="currentColor"
+            stroke-width="4"
+          ></circle>
+          <path
+            class="opacity-75"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+          ></path>
+        </svg>
+        <span>Warte auf Usercentrics CMP Initialisierung...</span>
+        </div>
+      </div>
+    `;
+  }
+
+  getPreviewImageTempalte() {
+    return this.previewImageUrl
+      ? html`<img
+          src="${this.previewImageUrl}"
+          class="h-full w-full object-cover opacity-[var(--consent-bg-opacity,20%)] absolute inset-0 m-0"
+          loading="lazy"
+        />`
+      : null;
+  }
+
+  wrapWithDiv(content) {
     return html`<div
-      class="absolute inset-0 z-10 flex flex-col items-center  mx-auto justify-center object-cover py-8 text-center"
+      class="@container absolute inset-0 flex flex-col items-center justify-center py-8 px-2 overflow-hidden"
     >
-      <svg
-        class="animate-spin size-8 text-[var(--consent-spinner-color)] mb-4"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-      >
-        <circle
-          class="opacity-25"
-          cx="12"
-          cy="12"
-          r="10"
-          stroke="currentColor"
-          stroke-width="4"
-        ></circle>
-        <path
-          class="opacity-75"
-          fill="currentColor"
-          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-        ></path>
-      </svg>
-      Warte auf Usercentrics CMP initialisierung...
+      ${this.getPreviewImageTempalte()} ${content}
     </div>`;
   }
 
   getConsentTemplate() {
     return html`
-      ${this.previewImageUrl
-        ? html`<img
-            src="${this.previewImageUrl}"
-            class="h-full w-full object-cover opacity-20 absolute inset-0 m-0"
-            loading="lazy"
-          />`
-        : null}
       <div
         class="
-            absolute inset-0 z-10 flex flex-col items-center  mx-auto justify-center object-cover py-8 px-2
-            text-white text-center
+            prose prose-sm @sm:prose-sm @md:prose-base @6xl:prose-xl
+            prose-ul:pl-0 prose-ul:mt-0 prose-ul:list-none first:prose-li:mt-0
             prose-a:text-[var(--consent-link-text-color,#EC7D28)] hover:prose-a:text-[var(--consent-link-text-color-hover,#D76D2A)]
-            prose prose-sm sm:prose-lg lg:prose-2xl
-            prose-ul:pl-0 prose-ul:mt-0 prose-ul:list-none
+            text-white text-center z-10
           "
       >
-        <h3 class="bg-letters text-xs">
+        <h3 class="bg-letters text-xs ">
           Dieser Inhalt kann aufgrund Ihrer Datenschutzeinstellungen nicht
           angezeigt werden
         </h3>
-        <a
-          class="
+        <h4 class="my-4 @sm:my-6 md:my-12 lg:my-16 font-normal">
+          <a
+            class="
+            text-center py-1 px-2 sm:py-2 sm:px-4 rounded no-underline cursor-pointer
             !bg-[var(--consent-button-bg-color,#EC7D28)] hover:!bg-[var(--consent-button-bg-color-hover,#D76D2A)] 
             !text-[var(--consent-button-text-color,#FFFFFF)] hover:!text-[var(--consent-button-text-color-hover,#FFFFFF)] 
             hover:ring ring-offset-black ring-offset-2 ring-[var(--consent-button-bg-color-hover,#EC7D28)]
-            text-center py-1 px-2 sm:py-2 sm:px-4 rounded no-underline my-2 sm:my-8 md:my-12 lg:my-16 cursor-pointer
+            inline-flex items-center justify-center space-x-2
             "
-          @click=${() => this.acceptAllRequiredConsents()}
-          >Cookies akzeptieren<span class="hidden sm:inline">
-            und Inhalt anzeigen</span
-          ></a
-        >
+            @click=${() => this.acceptAllRequiredConsents()}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="size-7"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <span
+              >Cookies akzeptieren<span class="hidden sm:inline">
+                und Inhalt anzeigen</span
+              >
+            </span>
+          </a>
+        </h4>
         <p class="hidden md:inline my-1 md:my-1">
           Folgende Cookies werden akzeptiert:
         </p>
@@ -189,7 +223,7 @@ export default class Consent extends LitElement {
             (service) =>
               html`<li>
                 <a
-                  class="cursor-pointer text-xs sm:text-lg lg:text-xl"
+                  class="cursor-pointer text-xs sm:text-sm lg:text-base"
                   @click="${() => this.toggleInfocenter(service.id)}"
                 >
                   ${service.name}
@@ -202,17 +236,22 @@ export default class Consent extends LitElement {
   }
 
   render() {
-    if (this.UCInitialized) {
-      if (this.allRequiredConsentsAccepted()) {
-        // show content behind wall
-        return html`<slot></slot>`;
-      } else {
-        // show consent wall
-        return this.getConsentTemplate();
-      }
-    } else {
-      // show "initializing..." message
-      return this.getInitializingTemplate();
+    // if no consents are required, return slot-content right away
+    if (this.requiredConsents.length === 0) {
+      return this.wrapWithDiv(html`<slot></slot>`);
     }
+
+    // return "initializing..." if usercentrics has not initialized yet
+    if (!this.UCInitialized) {
+      return this.wrapWithDiv(this.getInitializingTemplate());
+    }
+
+    // if all consents are accepted, return slot-content
+    if (this.allRequiredConsentsAccepted()) {
+      return this.wrapWithDiv(html`<slot></slot>`);
+    }
+
+    // show consent wall
+    return this.wrapWithDiv(this.getConsentTemplate());
   }
 }

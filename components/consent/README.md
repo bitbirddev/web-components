@@ -41,10 +41,13 @@ customElements.define("consent-wall", Consent);
 
 | name                              | default |
 | --------------------------------- | ------- |
-| ---consent-button-bg-color        | #EC7D28 |
+| --consent-button-bg-color         | #EC7D28 |
 | --consent-button-bg-color-hover   | #D76D2A |
 | --consent-button-text-color       | #FFFFFF |
 | --consent-button-text-color-hover | #FFFFFF |
 | --consent-link-text-color         | #EC7D28 |
 | --consent-link-text-color-hover   | #D76D2A |
 | --consent-spinner-color           | #EC7D28 |
+| --consent-text-shadow-color       | #000000 |
+| --consent-bg-color                | #000000 |
+| --consent-bg-opacity              | 20%     |
