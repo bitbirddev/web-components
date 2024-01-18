@@ -134,17 +134,16 @@
           class="h-full w-full object-cover opacity-[var(--consent-bg-opacity,20%)] absolute inset-0 m-0"
           loading="lazy"
         />`:null}wrapWithDiv(e){return u`<div
-      class="@container absolute inset-0 flex flex-col items-center justify-center py-8 px-2 overflow-hidden"
+      class="@container absolute inset-0 flex flex-col items-center justify-center overflow-hidden"
     >
       ${this.getPreviewImageTempalte()} ${e}
     </div>`}getConsentTemplate(){return u`
       <div
-        class="
+        class="py-8 px-2  text-white text-center z-10
             prose prose-sm @sm:prose-sm @md:prose-base @6xl:prose-xl
             prose-ul:pl-0 prose-ul:mt-0 prose-ul:list-none first:prose-li:mt-0
             prose-a:text-[var(--consent-link-text-color,#EC7D28)] hover:prose-a:text-[var(--consent-link-text-color-hover,#D76D2A)]
-            text-white text-center z-10
-          "
+            "
       >
         <h3 class="bg-letters text-xs ">
           Dieser Inhalt kann aufgrund Ihrer Datenschutzeinstellungen nicht
