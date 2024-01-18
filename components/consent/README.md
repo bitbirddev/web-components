@@ -1,6 +1,6 @@
 # UserCentrics CMP Consent Wall (Only for CMP V2)
 
-Adds a Consent Wall to your Website. The Content of the Consent Wall is only shown if the User accepts all required Services. This only works with the UserCentrics CMP V2.j
+Adds a Consent Wall to your Website. The Content of the Consent Wall is only shown if the User accepts all required Services. This only works with the UserCentrics CMP V2.
 
 ### Preview
 
@@ -37,7 +37,7 @@ customElements.define("consent-wall", Consent);
 | requiredConsents | Array of Usercentrics Service IDs. The Content of the Consent-Wall is only shown if all of this ServiceIds ara accepted |
 | previewImageUrl  | URL to a previewImage shown in the background of the ConsentWall                                                        |
 
-## CSS Variables
+## Available CSS Variables
 
 | name                              | default |
 | --------------------------------- | ------- |
@@ -51,3 +51,23 @@ customElements.define("consent-wall", Consent);
 | --consent-text-shadow-color       | #000000 |
 | --consent-bg-color                | #000000 |
 | --consent-bg-opacity              | 20%     |
+
+## Usage of CSS Variables
+
+Add this to your CSS Stylesheet to change the default values of the CSS Variables.
+
+```css
+consent-wall {
+  --consent-button-bg-color: lightblue;
+  --consent-button-bg-color-hover: blue;
+
+  --consent-button-text-color: white;
+  --consent-button-text-color-hover: white;
+
+  --consent-link-text-color: white;
+  --consent-link-text-color-hover: blue;
+
+  --consent-link-text-color-hover: lightblue;
+  --consent-spinner-color: blue;
+}
+```

@@ -4,7 +4,7 @@
 
 A hopefully growing collection of web components.
 
-### Finished Bundles
+### Finished Components
 
 - [Usercentrics Consent Wall](/components/consent/README.md)
 
