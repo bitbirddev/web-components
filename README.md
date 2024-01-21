@@ -6,7 +6,7 @@ A hopefully growing collection of web components.
 
 ### Finished Components
 
-- [Usercentrics Consent Wall](/lib/components/consent/README.md)
+- [Usercentrics Consent Wall](/lib/components/consent-wall/README.md)
 
 ## 1. Install Dependencies
 
