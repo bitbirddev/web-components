@@ -187,7 +187,7 @@ export default class Consent extends LitElement {
         <h4 class="my-4 @sm:my-6 @md:my-12 @lg:my-16 font-normal">
           <a
             class="
-            text-center py-1 px-2 sm:py-2 sm:px-4 rounded no-underline cursor-pointer
+            text-center py-1 px-2 @sm:py-2 @sm:px-4 rounded no-underline cursor-pointer
             !bg-[var(--consent-button-bg-color,#EC7D28)] hover:!bg-[var(--consent-button-bg-color-hover,#D76D2A)] 
             !text-[var(--consent-button-text-color,#FFFFFF)] hover:!text-[var(--consent-button-text-color-hover,#FFFFFF)] 
             hover:ring ring-offset-black ring-offset-2 ring-[var(--consent-button-bg-color-hover,#EC7D28)]
@@ -208,13 +208,13 @@ export default class Consent extends LitElement {
               />
             </svg>
             <span
-              >Cookies akzeptieren<span class="hidden sm:inline">
+              >Cookies akzeptieren<span class="hidden @sm:inline">
                 und Inhalt anzeigen</span
               >
             </span>
           </a>
         </h4>
-        <p class="hidden md:inline my-1 md:my-1">
+        <p class="hidden @md:inline my-1 @md:my-1">
           Folgende Cookies werden akzeptiert:
         </p>
         <ul>
@@ -222,7 +222,7 @@ export default class Consent extends LitElement {
             (service) =>
               html`<li>
                 <a
-                  class="cursor-pointer text-xs sm:text-sm lg:text-base"
+                  class="cursor-pointer text-xs @sm:text-sm @lg:text-base"
                   @click="${() => this.toggleInfocenter(service.id)}"
                 >
                   ${service.name}
