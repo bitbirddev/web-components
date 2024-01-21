@@ -184,7 +184,7 @@ export default class Consent extends LitElement {
           Dieser Inhalt kann aufgrund Ihrer Datenschutzeinstellungen nicht
           angezeigt werden
         </h3>
-        <h4 class="my-4 @sm:my-6 md:my-12 lg:my-16 font-normal">
+        <h4 class="my-4 @sm:my-6 @md:my-12 @lg:my-16 font-normal">
           <a
             class="
             text-center py-1 px-2 sm:py-2 sm:px-4 rounded no-underline cursor-pointer
