@@ -4,17 +4,17 @@ Adds a Consent Wall to your Website. The Content of the Consent Wall is only sho
 
 ### Preview
 
-![Preview](https://github.com/bitbirddev/web-components/blob/main/lib/components/consent/preview.png?raw=true)
+![Preview](https://github.com/bitbirddev/web-components/blob/main/lib/components/consent-wall/preview.png?raw=true)
 
 ## Install the component
 
-`yarn add bitbirddev-web-components`
+`yarn add @bitbirddev/web-components`
 
 ## Import the component
 
 ```js
-import { Consent } from "bitbirddev-web-components";
-customElements.define("consent-wall", Consent);
+import { ConsentWall } from "@bitbirddev/web-components";
+customElements.define("consent-wall", ConsentWall);
 ```
 
 ## Use the component
@@ -34,8 +34,8 @@ customElements.define("consent-wall", Consent);
 
 | name             | description                                                                                                             |
 | ---------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| requiredConsents | Array of Usercentrics Service IDs. The Content of the Consent-Wall is only shown if all of this ServiceIds ara accepted |
-| previewImageUrl  | URL to a previewImage shown in the background of the ConsentWall                                                        |
+| requiredConsents | Array of Usercentrics Service IDs. The Content of the Consent-Wall is only shown if all of this ServiceIds are accepted |
+| previewImageUrl  | URL to a previewImage shown in the background of the Consent-Wall                                                       |
 
 ## Available CSS Variables
 

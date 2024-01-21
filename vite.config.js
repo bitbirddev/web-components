@@ -17,11 +17,5 @@ export default {
       name: "@bitbirddev/web-components",
       fileName: "web-components",
     },
-    rollupOptions: {
-      manifest: true,
-      emptyOutDir: true,
-      assetsDir: "",
-      outDir: "./public/build",
-    },
   },
 };

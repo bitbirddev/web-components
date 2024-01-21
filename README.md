@@ -1,4 +1,4 @@
-# bitbirddev-web-components
+# @bitbirddev/web-components
 
 ## Description
 
@@ -14,8 +14,14 @@ A hopefully growing collection of web components.
 bun install
 ```
 
-### 2. Bundle
+### 2. Develop
 
 ```bash
-bun x vite build
+bun run dev --open
+```
+
+### 3. Bundle
+
+```bash
+bun run build
 ```

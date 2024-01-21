@@ -1,0 +1,12 @@
+consent-wall {
+  --consent-button-bg-color: theme("colors.orange.600");
+  --consent-button-bg-color-hover: theme("colors.orange.500");
+
+  --consent-button-text-color: white;
+  --consent-button-text-color-hover: white;
+
+  --consent-link-text-color: white;
+  --consent-link-text-color-hover: theme("colors.orange.600");
+
+  --consent-spinner-color: theme("colors.orange.500");
+}

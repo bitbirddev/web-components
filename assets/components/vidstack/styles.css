@@ -6,21 +6,20 @@
  * Player
  *************************************************************************************************/
 
-/* media-player { */
-/*   --brand-color: theme("colors.orange"); */
-/*   --focus-color: theme("colors.burned-orange"); */
-/**/
-/*   --audio-brand: var(--brand-color); */
-/*   --audio-focus-ring-color: var(--focus-color); */
-/*   --audio-border-radius: 2px; */
-/**/
-/*   --video-brand: var(--brand-color); */
-/*   --video-focus-ring-color: var(--focus-color); */
-/*   --video-border-radius: 2px; */
-/**/
-/*   /* 👉 https://vidstack.io/docs/player/components/layouts/default#css-variables for more. */
-*/
-/* } */
+media-player {
+  --brand-color: theme("colors.orange.600");
+  --focus-color: theme("colors.orange.500");
+
+  --audio-brand: var(--brand-color);
+  --audio-focus-ring-color: var(--focus-color);
+  --audio-border-radius: 2px;
+
+  --video-brand: var(--brand-color);
+  --video-focus-ring-color: var(--focus-color);
+  --video-border-radius: 2px;
+
+  /* 👉 https://vidstack.io/docs/player/components/layouts/default#css-variables for more. */
+}
 
 media-player[data-view-type="audio"] media-poster {
   display: none;

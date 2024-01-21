@@ -1,10 +1,12 @@
 {
   "name": "@bitbirddev/web-components",
+  "readme": "https://github.com/bitbirddev/web-components",
   "description": "a hopefully growing collection of web components",
   "version": "1.2.8",
   "type": "module",
   "files": [
-    "dist"
+    "dist",
+    "lib"
   ],
   "main": "./dist/web-components.umd.cjs",
   "module": "./dist/web-components.js",
