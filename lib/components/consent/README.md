@@ -4,7 +4,7 @@ Adds a Consent Wall to your Website. The Content of the Consent Wall is only sho
 
 ### Preview
 
-![Preview](https://github.com/bitbirddev/web-components/blob/main/components/consent/preview.png?raw=true)
+![Preview](https://github.com/bitbirddev/web-components/blob/main/lib/components/consent/preview.png?raw=true)
 
 ## Install the component
 

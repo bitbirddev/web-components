@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["components/**/*.{vue,js}"],
+  content: ["./lib/**/*.{vue,js}", "./index.html"],
   theme: {
     extend: {
       colors: {},
@@ -8,6 +8,7 @@ export default {
   },
   plugins: [
     require("@tailwindcss/typography"),
+    require("@tailwindcss/aspect-ratio"),
     require("@tailwindcss/container-queries"),
   ],
 };
