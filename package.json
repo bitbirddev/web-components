@@ -1,7 +1,7 @@
 {
   "name": "@bitbirddev/web-components",
   "description": "a hopefully growing collection of web components",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "type": "module",
   "files": [
     "dist"
