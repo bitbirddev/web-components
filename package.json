@@ -35,12 +35,14 @@
   "scripts": {
     "release": "np",
     "test": "echo \"No test specified\"",
-    "build": "bunx vite build"
+    "build": "bunx vite build",
+    "version": "bunx vite build",
+    "dev": "bunx vite dev"
   },
   "publishConfig": {
     "access": "public"
   },
   "np": {
-    "yarn": true
+    "bun": true
   }
 }
