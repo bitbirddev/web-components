@@ -25,7 +25,12 @@ customElements.define("media-encoding-status", MediaEncodingStatus);
   previewImageUrl="https://picsum.photos/seed/picsum/1280/1024"
   status="inprogress"
   processId="65ae5b5e2c31c"
-/>
+>
+  <p slot="error">There was an Error while encoding the Video</p>
+  <p slot="inprogress">
+    The Video is still being encoded. Please try again after a short while.
+  </p>
+</media-encoding-status>
 ```
 
 ## Props

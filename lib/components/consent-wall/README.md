@@ -4,7 +4,7 @@ Adds a Consent Wall to your Website. The Content of the Consent Wall is only sho
 
 ### Preview
 
-![Preview](https://github.com/bitbirddev/web-components/blob/main/lib/components/consent-wall/preview.png?raw=true)
+![Preview](https://github.com/bitbirddev/web-components/blob/main/lib/components/consent-wall/preview.jpeg?raw=true)
 
 ## Install the component
 
@@ -24,9 +24,18 @@ customElements.define("consent-wall", ConsentWall);
   previewImageUrl="https://picsum.photos/seed/picsum/1280/1024"
   requiredConsents='["BJz7qNsdj-7"]'
 >
-  Your Content behind the Wall. This Content is only shown if the User accepts
-  all required Services. Perfekt for Youtube/Vimeo Videos, Google Maps or other
-  Services.
+  <span slot="headline" class="relative"
+    >This content cannot be displayed due to your privacy settings.</span
+  >
+  <span slot="button-text" class="relative">Accept and display content </span>
+  <span slot="services-list-headline" class="relative"
+    >The following cookies are accepted:</span
+  >
+  <slot
+    >Your Content behind the Wall. This Content is only shown if the User
+    accepts all required Services. Perfect for Youtube/Vimeo Videos, Google Maps
+    or other Services.</slot
+  >
 </consent-wall>
 ```
 

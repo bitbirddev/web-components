@@ -15,32 +15,52 @@
     ></script>
   </head>
   <body>
-    <div class="prose mx-auto bg-gray-100">
+    <div class="prose max-w-none mx-auto bg-gray-100">
       <a href="javascript:UC_UI.showSecondLayer();">Datenschutz</a>
 
-      <div class="max-w-screen-lg mx-auto grid grid-cols-1 gap-12">
+      <div class="mx-auto grid grid-cols-1 gap-12">
         <div class="aspect-h-9 aspect-w-16">
           <media-encoding-status
             previewImageUrl="https://fastly.picsum.photos/id/7/4728/3168.jpg?hmac=c5B5tfYFM9blHHMhuu4UKmhnbZoJqrzNOP9xjkV4w3o"
             status="error"
             processId="65ae5b5e2c31c"
-          ></media-encoding-status>
+          >
+            <p slot="error">
+              An error occurred during the encoding of the video.
+            </p>
+            <p slot="inprogress">
+              The conversion of the video is not yet complete. Please try again
+              in a few minutes.
+            </p>
+          </media-encoding-status>
         </div>
         <consent-wall
           requiredConsents='["BJz7qNsdj-7"]'
           previewImageUrl="https://fastly.picsum.photos/id/13/2500/1667.jpg?hmac=SoX9UoHhN8HyklRA4A3vcCWJMVtiBXUg0W4ljWTor7s"
           class="aspect-w-16 aspect-h-9 bg-black"
         >
-          <media-player>
-            <media-provider>
-              <source
-                src="https://www.youtube.com/watch?v=5EV9IdeU3D0"
-                type="video/youtube"
-              />
-            </media-provider>
-            <media-video-layout></media-video-layout>
-            <media-audio-layout></media-audio-layout>
-          </media-player>
+          <span slot="headline" class="relative"
+            >This content cannot be displayed due to your privacy
+            settings.</span
+          >
+          <span slot="button-text" class="relative"
+            >Accept and display content
+          </span>
+          <span slot="services-list-headline" class="relative"
+            >The following cookies are accepted:</span
+          >
+          <slot>
+            <media-player>
+              <media-provider>
+                <source
+                  src="https://www.youtube.com/watch?v=5EV9IdeU3D0"
+                  type="video/youtube"
+                />
+              </media-provider>
+              <media-video-layout></media-video-layout>
+              <media-audio-layout></media-audio-layout>
+            </media-player>
+          </slot>
         </consent-wall>
 
         <consent-wall
