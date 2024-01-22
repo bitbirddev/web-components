@@ -45,11 +45,11 @@ customElements.define("media-encoding-status", MediaEncodingStatus);
 
 | name                                     | default |
 | ---------------------------------------- | ------- |
-| --thumbnail-status-bg-color              | #000000 |
-| --thumbnail-status-bg-opacity            | 20%     |
-| --thumbnail-status-text-shadow-color     | #000000 |
-| --thumbnail-status-icon-color-inprogress | #EC7D28 |
-| --thumbnail-status-icon-color-error      | #FF0000 |
+| --media-encoding-status-bg-color              | #000000 |
+| --media-encoding-status-bg-opacity            | 20%     |
+| --media-encoding-status-text-shadow-color     | #000000 |
+| --media-encoding-status-icon-color-inprogress | #EC7D28 |
+| --media-encoding-status-icon-color-error      | #FF0000 |
 
 ## Usage of CSS Variables
 
@@ -57,12 +57,12 @@ Add this to your CSS Stylesheet to change the default values of the CSS Variable
 
 ```css
 media-encoding-status {
-  --thumbnail-status-bg-color: #000000;
-  --thumbnail-status-bg-opacity: 20%;
+  --media-encoding-status-bg-color: #000000;
+  --media-encoding-status-bg-opacity: 20%;
 
-  --thumbnail-status-text-shadow-color: #000000;
+  --media-encoding-status-text-shadow-color: #000000;
 
-  --thumbnail-status-icon-color-inprogress: #ec7d28;
-  --thumbnail-status-icon-color-error: #ff0000;
+  --media-encoding-status-icon-color-inprogress: #ec7d28;
+  --media-encoding-status-icon-color-error: #ff0000;
 }
 ```
