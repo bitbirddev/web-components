@@ -3,7 +3,7 @@
  * Copyright 2019 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-const I = globalThis, M = I.ShadowRoot && (I.ShadyCSS === void 0 || I.ShadyCSS.nativeShadow) && "adoptedStyleSheets" in Document.prototype && "replace" in CSSStyleSheet.prototype, R = Symbol(), j = /* @__PURE__ */ new WeakMap();
+const I = globalThis, H = I.ShadowRoot && (I.ShadyCSS === void 0 || I.ShadyCSS.nativeShadow) && "adoptedStyleSheets" in Document.prototype && "replace" in CSSStyleSheet.prototype, R = Symbol(), j = /* @__PURE__ */ new WeakMap();
 let Q = class {
   constructor(e, o, t) {
     if (this._$cssResult$ = !0, t !== R)
@@ -13,7 +13,7 @@ let Q = class {
   get styleSheet() {
     let e = this.o;
     const o = this.t;
-    if (M && e === void 0) {
+    if (H && e === void 0) {
       const t = o !== void 0 && o.length === 1;
       t && (e = j.get(o)), e === void 0 && ((this.o = e = new CSSStyleSheet()).replaceSync(this.cssText), t && j.set(o, e));
     }
@@ -33,14 +33,14 @@ const q = (r) => new Q(typeof r == "string" ? r : r + "", void 0, R), X = (r, ..
   })(s) + r[n + 1], r[0]);
   return new Q(o, r, R);
 }, ie = (r, e) => {
-  if (M)
+  if (H)
     r.adoptedStyleSheets = e.map((o) => o instanceof CSSStyleSheet ? o : o.styleSheet);
   else
     for (const o of e) {
       const t = document.createElement("style"), s = I.litNonce;
       s !== void 0 && t.setAttribute("nonce", s), t.textContent = o.cssText, r.appendChild(t);
     }
-}, O = M ? (r) => r : (r) => r instanceof CSSStyleSheet ? ((e) => {
+}, O = H ? (r) => r : (r) => r instanceof CSSStyleSheet ? ((e) => {
   let o = "";
   for (const t of e.cssRules)
     o += t.cssText;
@@ -51,7 +51,7 @@ const q = (r) => new Q(typeof r == "string" ? r : r + "", void 0, R), X = (r, ..
  * Copyright 2017 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-const { is: ae, defineProperty: le, getOwnPropertyDescriptor: pe, getOwnPropertyNames: he, getOwnPropertySymbols: ce, getPrototypeOf: me } = Object, D = globalThis, L = D.trustedTypes, de = L ? L.emptyScript : "", ge = D.reactiveElementPolyfillSupport, z = (r, e) => r, H = { toAttribute(r, e) {
+const { is: ae, defineProperty: le, getOwnPropertyDescriptor: pe, getOwnPropertyNames: he, getOwnPropertySymbols: ce, getPrototypeOf: me } = Object, D = globalThis, L = D.trustedTypes, de = L ? L.emptyScript : "", ge = D.reactiveElementPolyfillSupport, z = (r, e) => r, M = { toAttribute(r, e) {
   switch (e) {
     case Boolean:
       r = r ? de : null;
@@ -79,7 +79,7 @@ const { is: ae, defineProperty: le, getOwnPropertyDescriptor: pe, getOwnProperty
       }
   }
   return o;
-} }, Y = (r, e) => !ae(r, e), B = { attribute: !0, type: String, converter: H, reflect: !1, hasChanged: Y };
+} }, Y = (r, e) => !ae(r, e), B = { attribute: !0, type: String, converter: M, reflect: !1, hasChanged: Y };
 Symbol.metadata ??= Symbol("metadata"), D.litPropertyMetadata ??= /* @__PURE__ */ new WeakMap();
 class x extends HTMLElement {
   static addInitializer(e) {
@@ -188,14 +188,14 @@ class x extends HTMLElement {
   _$EO(e, o) {
     const t = this.constructor.elementProperties.get(e), s = this.constructor._$Eu(e, t);
     if (s !== void 0 && t.reflect === !0) {
-      const n = (t.converter?.toAttribute !== void 0 ? t.converter : H).toAttribute(o, t.type);
+      const n = (t.converter?.toAttribute !== void 0 ? t.converter : M).toAttribute(o, t.type);
       this._$Em = e, n == null ? this.removeAttribute(s) : this.setAttribute(s, n), this._$Em = null;
     }
   }
   _$AK(e, o) {
     const t = this.constructor, s = t._$Eh.get(e);
     if (s !== void 0 && this._$Em !== s) {
-      const n = t.getPropertyOptions(s), i = typeof n.converter == "function" ? { fromAttribute: n.converter } : n.converter?.fromAttribute !== void 0 ? n.converter : H;
+      const n = t.getPropertyOptions(s), i = typeof n.converter == "function" ? { fromAttribute: n.converter } : n.converter?.fromAttribute !== void 0 ? n.converter : M;
       this._$Em = s, this[s] = i.fromAttribute(o, n.type), this._$Em = null;
     }
   }
@@ -840,8 +840,8 @@ class Se extends y {
   }
 }
 customElements.define("consent-wall", Ce);
-customElements.define("video-thumbnail-status", Se);
+customElements.define("media-encoding-status", Se);
 export {
   Ce as ConsentWall,
-  Se as VideoThumbnailStatus
+  Se as MediaEncodingStatus
 };

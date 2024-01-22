@@ -191,4 +191,4 @@
               />`:null}
         </div>
       </div>
-    `}}customElements.define("consent-wall",ae),customElements.define("video-thumbnail-status",le),u.ConsentWall=ae,u.VideoThumbnailStatus=le,Object.defineProperty(u,Symbol.toStringTag,{value:"Module"})});
+    `}}customElements.define("consent-wall",ae),customElements.define("media-encoding-status",le),u.ConsentWall=ae,u.MediaEncodingStatus=le,Object.defineProperty(u,Symbol.toStringTag,{value:"Module"})});

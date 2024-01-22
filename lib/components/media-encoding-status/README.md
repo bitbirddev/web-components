@@ -4,8 +4,8 @@ Adds a Consent Wall to your Website. The Content of the Consent Wall is only sho
 
 ### Preview
 
-![Preview](https://github.com/bitbirddev/web-components/blob/main/lib/components/video-thumbnail-status/inprogress.jpg?raw=true)
-![Preview](https://github.com/bitbirddev/web-components/blob/main/lib/components/video-thumbnail-status/error.jpg?raw=true)
+![Preview](https://github.com/bitbirddev/web-components/blob/main/lib/components/media-encoding-status/inprogress.jpg?raw=true)
+![Preview](https://github.com/bitbirddev/web-components/blob/main/lib/components/media-encoding-status/error.jpg?raw=true)
 
 ## Install the component
 
@@ -14,14 +14,14 @@ Adds a Consent Wall to your Website. The Content of the Consent Wall is only sho
 ## Import the component
 
 ```js
-import { VideoThumbnailStatus } from "@bitbirddev/web-components";
-customElements.define("video-thumbnail-status", VideoThumbnailStatus);
+import { MediaEncodingStatus } from "@bitbirddev/web-components";
+customElements.define("media-encoding-status", MediaEncodingStatus);
 ```
 
 ## Use the component
 
 ```html
-<video-thumbnail-status
+<media-encoding-status
   previewImageUrl="https://picsum.photos/seed/picsum/1280/1024"
   status="inprogress"
   processId="65ae5b5e2c31c"
@@ -51,7 +51,7 @@ customElements.define("video-thumbnail-status", VideoThumbnailStatus);
 Add this to your CSS Stylesheet to change the default values of the CSS Variables.
 
 ```css
-video-thumbnail-status {
+media-encoding-status {
   --thumbnail-status-bg-color: #000000;
   --thumbnail-status-bg-opacity: 20%;
 
