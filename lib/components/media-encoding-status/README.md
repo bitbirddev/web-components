@@ -25,6 +25,7 @@ customElements.define("media-encoding-status", MediaEncodingStatus);
   previewImageUrl="https://picsum.photos/seed/picsum/1280/1024"
   status="inprogress"
   processId="65ae5b5e2c31c"
+  style="aspect-ratio: 16 / 9"
 >
   <p slot="error">There was an Error while encoding the Video</p>
   <p slot="inprogress">
@@ -43,13 +44,14 @@ customElements.define("media-encoding-status", MediaEncodingStatus);
 
 ## Available CSS Variables
 
-| name                                     | default |
-| ---------------------------------------- | ------- |
+| name                                          | default |
+| --------------------------------------------- | ------- |
 | --media-encoding-status-bg-color              | #000000 |
 | --media-encoding-status-bg-opacity            | 20%     |
 | --media-encoding-status-text-shadow-color     | #000000 |
 | --media-encoding-status-icon-color-inprogress | #EC7D28 |
 | --media-encoding-status-icon-color-error      | #FF0000 |
+| --media-encoding-status-text-color            | #ffffff |
 
 ## Usage of CSS Variables
 
@@ -57,6 +59,7 @@ Add this to your CSS Stylesheet to change the default values of the CSS Variable
 
 ```css
 media-encoding-status {
+  --media-encoding-status-text-color: #ffffff;
   --media-encoding-status-bg-color: #000000;
   --media-encoding-status-bg-opacity: 20%;
 

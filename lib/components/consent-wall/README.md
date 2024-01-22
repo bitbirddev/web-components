@@ -23,6 +23,7 @@ customElements.define("consent-wall", ConsentWall);
 <consent-wall
   previewImageUrl="https://picsum.photos/seed/picsum/1280/1024"
   requiredConsents='["BJz7qNsdj-7"]'
+  style="aspect-ratio: 16 / 9"
 >
   <span slot="headline" class="relative"
     >This content cannot be displayed due to your privacy settings.</span
