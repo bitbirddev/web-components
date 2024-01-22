@@ -4,8 +4,8 @@ Adds a Consent Wall to your Website. The Content of the Consent Wall is only sho
 
 ### Preview
 
-![Preview](https://github.com/bitbirddev/web-components/blob/main/lib/components/media-encoding-status/inprogress.jpg?raw=true)
-![Preview](https://github.com/bitbirddev/web-components/blob/main/lib/components/media-encoding-status/error.jpg?raw=true)
+![Preview](https://github.com/bitbirddev/web-components/blob/main/lib/components/media-encoding-status/inprogress.jpeg?raw=true)
+![Preview](https://github.com/bitbirddev/web-components/blob/main/lib/components/media-encoding-status/error.jpeg?raw=true)
 
 ## Install the component
 
