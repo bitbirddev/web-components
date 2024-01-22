@@ -2,7 +2,7 @@
   "name": "@bitbirddev/web-components",
   "readme": "https://github.com/bitbirddev/web-components",
   "description": "a hopefully growing collection of web components",
-  "version": "1.2.13",
+  "version": "1.2.14",
   "type": "module",
   "files": [
     "dist",
