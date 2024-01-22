@@ -829,12 +829,13 @@ class Se extends y {
                 <span class="bg-letters text-center font-semibold spacing-wider"
                   >Es trat ein Fehler bei der Codierung des Videos auf.</span
                 >` : null}
-          ${this.previewImageUrl ? d`<img
-                src="${this.previewImageUrl}"
-                class="h-full w-full object-cover opacity-[var(--thumbnail-status-bg-opacity,20%)] absolute inset-0 m-0 z-[-1]"
-                loading="lazy"
-              />` : null}
         </div>
+
+        ${this.previewImageUrl ? d`<img
+              src="${this.previewImageUrl}"
+              class="h-full w-full object-cover opacity-[var(--thumbnail-status-bg-opacity,20%)] absolute inset-0 m-0 z-[-1]"
+              loading="lazy"
+            />` : null}
       </div>
     `;
   }
