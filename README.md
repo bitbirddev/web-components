@@ -26,3 +26,11 @@ bun run dev --open
 ```bash
 bun run build
 ```
+
+### Exclude from vue
+
+```js
+app.config.compilerOptions.isCustomElement = (tag) => {
+  return ["media-encoding-status", "consent-wall"].includes(tag);
+};
+```

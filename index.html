@@ -19,20 +19,6 @@
       <a href="javascript:UC_UI.showSecondLayer();">Datenschutz</a>
 
       <div class="mx-auto max-w-screen-lg grid grid-cols-1 gap-12">
-        <media-encoding-status
-          previewImageUrl="https://fastly.picsum.photos/id/7/4728/3168.jpg?hmac=c5B5tfYFM9blHHMhuu4UKmhnbZoJqrzNOP9xjkV4w3o"
-          status="error"
-          processId="65ae5b5e2c31c"
-          style="aspect-ratio: 16 / 9"
-        >
-          <p slot="error" class="">
-            An error occurred during the encoding of the video.
-          </p>
-          <p slot="inprogress" class="">
-            The conversion of the video is not yet complete. Please try again in
-            a few minutes.
-          </p>
-        </media-encoding-status>
         <consent-wall
           requiredConsents='["BJz7qNsdj-7"]'
           previewImageUrl="https://fastly.picsum.photos/id/13/2500/1667.jpg?hmac=SoX9UoHhN8HyklRA4A3vcCWJMVtiBXUg0W4ljWTor7s"
@@ -76,6 +62,21 @@
             <media-audio-layout></media-audio-layout>
           </media-player>
         </consent-wall>
+
+        <media-encoding-status
+          previewImageUrl="https://fastly.picsum.photos/id/7/4728/3168.jpg?hmac=c5B5tfYFM9blHHMhuu4UKmhnbZoJqrzNOP9xjkV4w3o"
+          status="error"
+          processId="65ae5b5e2c31c"
+          style="aspect-ratio: 16 / 9"
+        >
+          <p slot="error" class="">
+            An error occurred during the encoding of the video.
+          </p>
+          <p slot="inprogress" class="">
+            The conversion of the video is not yet complete. Please try again in
+            a few minutes.
+          </p>
+        </media-encoding-status>
       </div>
     </div>
 

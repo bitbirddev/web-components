@@ -51,7 +51,7 @@ const q = (r) => new Q(typeof r == "string" ? r : r + "", void 0, R), X = (r, ..
  * Copyright 2017 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-const { is: ae, defineProperty: le, getOwnPropertyDescriptor: pe, getOwnPropertyNames: he, getOwnPropertySymbols: ce, getPrototypeOf: me } = Object, D = globalThis, L = D.trustedTypes, de = L ? L.emptyScript : "", ge = D.reactiveElementPolyfillSupport, z = (r, e) => r, M = { toAttribute(r, e) {
+const { is: ae, defineProperty: le, getOwnPropertyDescriptor: pe, getOwnPropertyNames: he, getOwnPropertySymbols: ce, getPrototypeOf: me } = Object, D = globalThis, L = D.trustedTypes, de = L ? L.emptyScript : "", ge = D.reactiveElementPolyfillSupport, A = (r, e) => r, M = { toAttribute(r, e) {
   switch (e) {
     case Boolean:
       r = r ? de : null;
@@ -111,15 +111,15 @@ class x extends HTMLElement {
     return this.elementProperties.get(e) ?? B;
   }
   static _$Ei() {
-    if (this.hasOwnProperty(z("elementProperties")))
+    if (this.hasOwnProperty(A("elementProperties")))
       return;
     const e = me(this);
     e.finalize(), e.l !== void 0 && (this.l = [...e.l]), this.elementProperties = new Map(e.elementProperties);
   }
   static finalize() {
-    if (this.hasOwnProperty(z("finalized")))
+    if (this.hasOwnProperty(A("finalized")))
       return;
-    if (this.finalized = !0, this._$Ei(), this.hasOwnProperty(z("properties"))) {
+    if (this.finalized = !0, this._$Ei(), this.hasOwnProperty(A("properties"))) {
       const o = this.properties, t = [...he(o), ...ce(o)];
       for (const s of t)
         this.createProperty(s, o[s]);
@@ -271,14 +271,14 @@ class x extends HTMLElement {
   firstUpdated(e) {
   }
 }
-x.elementStyles = [], x.shadowRootOptions = { mode: "open" }, x[z("elementProperties")] = /* @__PURE__ */ new Map(), x[z("finalized")] = /* @__PURE__ */ new Map(), ge?.({ ReactiveElement: x }), (D.reactiveElementVersions ??= []).push("2.0.3");
+x.elementStyles = [], x.shadowRootOptions = { mode: "open" }, x[A("elementProperties")] = /* @__PURE__ */ new Map(), x[A("finalized")] = /* @__PURE__ */ new Map(), ge?.({ ReactiveElement: x }), (D.reactiveElementVersions ??= []).push("2.0.3");
 /**
  * @license
  * Copyright 2017 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
 const N = globalThis, P = N.trustedTypes, W = P ? P.createPolicy("lit-html", { createHTML: (r) => r }) : void 0, ee = "$lit$", b = `lit$${(Math.random() + "").slice(9)}$`, oe = "?" + b, we = `<${oe}>`, v = document, C = () => v.createComment(""), k = (r) => r === null || typeof r != "object" && typeof r != "function", te = Array.isArray, be = (r) => te(r) || typeof r?.[Symbol.iterator] == "function", T = `[ 	
-\f\r]`, A = /<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g, V = /-->/g, Z = />/g, f = RegExp(`>|${T}(?:([^\\s"'>=/]+)(${T}*=${T}*(?:[^ 	
+\f\r]`, z = /<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g, V = /-->/g, Z = />/g, f = RegExp(`>|${T}(?:([^\\s"'>=/]+)(${T}*=${T}*(?:[^ 	
 \f\r"'\`<>=]|("|')|))|$)`, "g"), G = /'/g, J = /"/g, se = /^(?:script|style|textarea|title)$/i, fe = (r) => (e, ...o) => ({ _$litType$: r, strings: e, values: o }), d = fe(1), $ = Symbol.for("lit-noChange"), h = Symbol.for("lit-nothing"), K = /* @__PURE__ */ new WeakMap(), u = v.createTreeWalker(v, 129);
 function re(r, e) {
   if (!Array.isArray(r) || !r.hasOwnProperty("raw"))
@@ -287,14 +287,14 @@ function re(r, e) {
 }
 const ue = (r, e) => {
   const o = r.length - 1, t = [];
-  let s, n = e === 2 ? "<svg>" : "", i = A;
+  let s, n = e === 2 ? "<svg>" : "", i = z;
   for (let m = 0; m < o; m++) {
     const a = r[m];
     let p, c, l = -1, g = 0;
     for (; g < a.length && (i.lastIndex = g, c = i.exec(a), c !== null); )
-      g = i.lastIndex, i === A ? c[1] === "!--" ? i = V : c[1] !== void 0 ? i = Z : c[2] !== void 0 ? (se.test(c[2]) && (s = RegExp("</" + c[2], "g")), i = f) : c[3] !== void 0 && (i = f) : i === f ? c[0] === ">" ? (i = s ?? A, l = -1) : c[1] === void 0 ? l = -2 : (l = i.lastIndex - c[2].length, p = c[1], i = c[3] === void 0 ? f : c[3] === '"' ? J : G) : i === J || i === G ? i = f : i === V || i === Z ? i = A : (i = f, s = void 0);
+      g = i.lastIndex, i === z ? c[1] === "!--" ? i = V : c[1] !== void 0 ? i = Z : c[2] !== void 0 ? (se.test(c[2]) && (s = RegExp("</" + c[2], "g")), i = f) : c[3] !== void 0 && (i = f) : i === f ? c[0] === ">" ? (i = s ?? z, l = -1) : c[1] === void 0 ? l = -2 : (l = i.lastIndex - c[2].length, p = c[1], i = c[3] === void 0 ? f : c[3] === '"' ? J : G) : i === J || i === G ? i = f : i === V || i === Z ? i = z : (i = f, s = void 0);
     const w = i === f && r[m + 1].startsWith("/>") ? " " : "";
-    n += i === A ? a + we : l >= 0 ? (t.push(p), a.slice(0, l) + ee + a.slice(l) + b + w) : a + b + (l === -2 ? m : w);
+    n += i === z ? a + we : l >= 0 ? (t.push(p), a.slice(0, l) + ee + a.slice(l) + b + w) : a + b + (l === -2 ? m : w);
   }
   return [re(r, n + (r[o] || "<?>") + (e === 2 ? "</svg>" : "")), t];
 };
@@ -507,9 +507,9 @@ class _e {
     _(this, e);
   }
 }
-const Ae = N.litHtmlPolyfillSupport;
-Ae?.(S, E), (N.litHtmlVersions ??= []).push("3.1.1");
-const ze = (r, e, o) => {
+const ze = N.litHtmlPolyfillSupport;
+ze?.(S, E), (N.litHtmlVersions ??= []).push("3.1.1");
+const Ae = (r, e, o) => {
   const t = o?.renderBefore ?? e;
   let s = t._$litPart$;
   if (s === void 0) {
@@ -533,7 +533,7 @@ class y extends x {
   }
   update(e) {
     const o = this.render();
-    this.hasUpdated || (this.renderOptions.isConnected = this.isConnected), super.update(e), this._$Do = ze(o, this.renderRoot, this.renderOptions);
+    this.hasUpdated || (this.renderOptions.isConnected = this.isConnected), super.update(e), this._$Do = Ae(o, this.renderRoot, this.renderOptions);
   }
   connectedCallback() {
     super.connectedCallback(), this._$Do?.setConnected(!0);
@@ -586,12 +586,15 @@ class ke extends y {
     );
   }
   connectedCallback() {
-    super.connectedCallback(), this.requiredConsents.length > 0 && (window.addEventListener("UC_UI_INITIALIZED", (e) => {
-      this.UCInitialized = !0, this.refreshConsentStatus();
+    super.connectedCallback(), this.requiredConsents.length > 0 && (window.UC_UI && window.UC_UI.isInitialized() ? this.initialize() : window.addEventListener("UC_UI_INITIALIZED", (e) => {
+      this.initialize();
     }), window.addEventListener(
       "onConsentStatusChange",
       this.handleConsentStatusChange
     ));
+  }
+  initialize() {
+    this.UCInitialized = !0, this.refreshConsentStatus();
   }
   updated(e) {
     if (e.has("consentStatus")) {
@@ -757,6 +760,7 @@ class ke extends y {
     return this.requiredConsents.length === 0 ? this.wrapWithDiv(d`<slot></slot>`) : this.UCInitialized ? this.allRequiredConsentsAccepted() ? this.wrapWithDiv(d`<slot></slot>`) : this.wrapWithDiv(this.getConsentTemplate()) : this.wrapWithDiv(this.getInitializingTemplate());
   }
 }
+customElements.define("consent-wall", ke);
 class Se extends y {
   static styles = [
     q(ne),
@@ -855,7 +859,6 @@ class Se extends y {
     `;
   }
 }
-customElements.define("consent-wall", ke);
 customElements.define("media-encoding-status", Se);
 export {
   ke as ConsentWall,
