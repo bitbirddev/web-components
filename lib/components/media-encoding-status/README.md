@@ -1,6 +1,7 @@
-# Video Thumbnail Status
+# Video Thumbnail Status WebComponent
 
-Adds a Consent Wall to your Website. The Content of the Consent Wall is only shown if the User accepts all required Services. This only works with the UserCentrics CMP V2.
+WebComponent to display the media encoding status of a video thumbnail. Is used by
+[bitbirddev/twig-components-bundle](https://github.com/bitbirddev/twig-components-bundle)
 
 ### Preview
 
@@ -36,11 +37,11 @@ customElements.define("media-encoding-status", MediaEncodingStatus);
 
 ## Props
 
-| name            | description                                                       |
-| --------------- | ----------------------------------------------------------------- |
-| status          | string: "error" or "inprogress"                                   |
-| previewImageUrl | URL to a previewImage shown in the background of the Consent-Wall |
-| processId       | string: optional                                                  |
+| name            | description                                                    |
+| --------------- | -------------------------------------------------------------- |
+| status          | string: "error" or "inprogress"                                |
+| previewImageUrl | URL to a previewImage shown in the background of the Component |
+| processId       | string: optional                                               |
 
 ## Available CSS Variables
 

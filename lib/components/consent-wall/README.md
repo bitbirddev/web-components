@@ -1,6 +1,7 @@
-# UserCentrics CMP Consent Wall (Only for CMP V2)
+# UserCentrics CMP Consent Wall WebComponent (Only for CMP V2)
 
 Adds a Consent Wall to your Website. The Content of the Consent Wall is only shown if the User accepts all required Services. This only works with the UserCentrics CMP V2.
+This Package is also used by [bitbirddev/twig-components-bundle](https://github.com/bitbirddev/twig-components-bundle)
 
 ### Preview
 

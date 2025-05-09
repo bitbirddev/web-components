@@ -13,12 +13,50 @@
       data-settings-id="Txd_Bllbm"
       async
     ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/vidstack@^1.0.0/player/styles/default/theme.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/vidstack@^1.0.0/player/styles/default/layouts/video.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/vidstack@^1.0.0/cdn/with-layouts/vidstack.js"
+      type="module"
+    ></script>
   </head>
   <body>
     <div class="prose max-w-none mx-auto bg-gray-100">
       <a href="javascript:UC_UI.showSecondLayer();">Datenschutz</a>
 
       <div class="mx-auto max-w-screen-lg grid grid-cols-1 gap-12">
+        <media-player>
+          <media-provider>
+            <source
+              src="https://player.vimeo.com/video/763694880?hash=e21fea6134"
+              type="video/vimeo"
+            />
+          </media-provider>
+          <media-video-layout></media-video-layout>
+          <media-audio-layout></media-audio-layout>
+        </media-player>
+        <div style="padding: 56.25% 0 0 0; position: relative">
+          <iframe
+            src="https://player.vimeo.com/video/763694880?h=e21fea6134&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            style="
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            "
+            title="fit4future Kids - Spiele mit dem Reifen"
+          >
+          </iframe>
+        </div>
         <consent-wall
           requiredConsents='["BJz7qNsdj-7"]'
           previewImageUrl="https://fastly.picsum.photos/id/13/2500/1667.jpg?hmac=SoX9UoHhN8HyklRA4A3vcCWJMVtiBXUg0W4ljWTor7s"

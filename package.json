@@ -19,19 +19,19 @@
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/container-queries": "^0.1.1",
-    "@tailwindcss/typography": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16",
     "@types/bun": "latest",
-    "autoprefixer": "^10.4.16",
-    "lit": "^3.1.1",
+    "autoprefixer": "^10.4.21",
+    "lit": "^3.3.0",
     "lodash": "^4.17.21",
-    "np": "*",
-    "postcss": "^8.4.33",
-    "tailwindcss": "^3.4.1",
+    "np": "^10.2.0",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17",
     "vidstack": "next",
-    "vite": "^5.0.11"
+    "vite": "^6.3.5"
   },
   "peerDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "^5.3.3"
   },
   "dependencies": {},
   "scripts": {
